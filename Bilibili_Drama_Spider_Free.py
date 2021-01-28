@@ -160,6 +160,8 @@ class Bilibili:
             os.remove(self.ep_num + '.mp4')
             os.remove(self.ep_num + '.mp3')
             deleteline('./undownload_list.txt', 1)
+            add_log('./logs.txt', '{}下载完成'.format(self.name))
+            print("下载成功！")
             if targeturl == signal[0]:
                 add_content('./downloaded_list.txt', vid)
                 os.remove(self.path + '\\info.temp')
@@ -167,8 +169,7 @@ class Bilibili:
                 add_log('./logs.txt', '番剧 {} 下载完成'.format(self.drama_name))
             # else:
                 # print('2')
-            add_log('./logs.txt', '{}下载完成'.format(self.name))
-            print("下载成功！")
+
 
     def down(self, v, a):
         # 判断下载的内容
